@@ -9,4 +9,4 @@ It showcases my projects, skills, and experience with a modern design and intera
 - Smooth navigation and clean layout for better user experience  
 - Sections for **About Me, Projects, Resume, and Contact**  
 
-🚀 Deployed on [Vercel/Netlify]  
+🚀 Deployed on Vercel 
