@@ -1,0 +1,124 @@
+{
+    "basics": {
+        "name": "Kushagra Singh Negi",
+        "label": "Web Developer",
+        "email": "kushagra910200@gmail.com",
+        "phone": "(XXX) XXX-XXXX",
+        "picture": "logo-transparent.png",
+        "x_title": "Hello, I'm",
+        "job1": "Web",
+        "job2": "Developer",
+        "description": "Hello! I'm Kushagra! Your web development enthusiast. Always down for something new and challenging! Just like markdown, I'm here to help you create beautifully formatted websites.",
+        "summary": "based in Jaipur, India.",
+        "keywords": "personal,website,portfolio,template,kit,mark,tan,kushagrasinghnegi,webdev,web,developer,jaipur,india,react,github,linkedin,google,gitlab,telegram,material,design,ui,webapp,markdown",
+        "url": "https://kushagra.vercel.app/",
+        "location": {
+            "address": "XXX, Street",
+            "postalCode": "302015",
+            "city": "Jaipur",
+            "country": "India",
+            "countryCode": "IND"
+        },
+        "profiles": [
+            {
+                "network": "Google",
+                "username": "kushagra910200@gmail.com",
+                "url": "mailto:kushagra910200@gmail.com",
+                "x_icon": "fab fa-google"
+            },
+            {
+                "network": "LinkedIn",
+                "username": "kushh01",
+                "url": "https://www.linkedin.com/in/kushh01/",
+                "x_icon": "fab fa-linkedin-in"
+            },
+            {
+                "network": "GitHub",
+                "username": "Kushagra001",
+                "url": "https://github.com/Kushagra001",
+                "x_icon": "fab fa-github"
+            },
+    {
+                "network": "Telegram",
+                "username": "@kush_001",
+                "url": "https://t.me/kush_001",
+                "x_icon": "fab fa-telegram-plane"
+            },
+            {
+                "network": "Discord",
+                "username": "_kushh01",
+                "url": "https://discord.com",
+                "x_icon": "fab fa-discord"
+            }
+        ]
+    },
+    "work": [
+        {
+            "company": "Company",
+            "position": "President",
+            "website": "http://company.com",
+            "startDate": "2013-01-01",
+            "endDate": "2014-01-01",
+            "summary": "Description...",
+            "highlights": ["Started the company"]
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Organization",
+            "position": "Volunteer",
+            "website": "http://organization.com/",
+            "startDate": "2012-01-01",
+            "endDate": "2013-01-01",
+            "summary": "Description...",
+            "highlights": ["Awarded 'Volunteer of the Month'"]
+        }
+    ],
+    "education": [
+        {
+            "institution": "JECRC University",
+            "area": "Computer Science",
+            "studyType": "Bachelor",
+            "startDate": "01-06-2019",
+            "endDate": "01-06-2022",
+            "gpa": "8.2"
+        },
+        {
+            "institution": "VIT Bhopal",
+            "area": "Computer Science",
+            "studyType": "Masters",
+            "startDate": "01-06-2023",
+            "endDate": "01-06-2025",
+            "gpa": "9.03"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Web Development",
+            "level": "Master",
+            "keywords": ["HTML", "CSS", "Javascript"]
+        }
+    ],
+    "languages": [
+        {
+            "language": "Hindi",
+            "fluency": "Native speaker"
+        },
+        {
+            "language": "English",
+            "fluency": "Fluent speaker"
+        }
+    ],
+    "interests": [
+        {
+            "name": "gaming",
+            "keywords": ["Video Games", "Singleplayer", "Multiplayer"]
+        }
+    ],
+    "references": [
+        {
+            "name": "Jane Doe",
+            "reference": "Reference..."
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Kushagra Singh Negi | Jaipur, India",
+    "short_name": "kushagra.vercel.app",
+    "icons": [
+        {
+            "src": "/logo-transparent192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/logo-transparent512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#00bfbf",
+    "background_color": "#171c28"
+}
