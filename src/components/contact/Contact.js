@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const Contact = () => {
   const classes = useStyles();
-  const greetings = "Say hello.";
+  const greetings = "Get in touch!";
 
   const form = useRef();
 
@@ -91,7 +91,7 @@ export const Contact = () => {
                 />
                 <button type="submit" value="Send" className="submit-btn">
                 <i className="fas fa-terminal"></i>
-                  <Typography component='span'> Send Message</Typography>
+                  <Typography component='span'> Send.</Typography>
                 </button>
               </form>
             </div>
