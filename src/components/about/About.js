@@ -15,7 +15,14 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '3em',
     marginBottom: "auto",
   },
+  aboutText: {
+    color: theme.palette.text.primary,   // 👈 will auto-toggle
+    fontSize: "1.1rem",
+    lineHeight: 1.6,
+    marginTop: theme.spacing(2),
+  },
 }));
+
 
 export const About = () => {
   const classes = useStyles();
@@ -41,9 +48,9 @@ export const About = () => {
             <Typography component='h2' variant="h5">
               <TextDecrypt text={`${greetings}`} />
             </Typography>
-            <p className="aboutme">
+            <Typography component="p" variant="body1" className={classes.aboutText}>
               {aboutme}
-            </p>
+            </Typography>
             <a href="#contact" className="contact-btn">
               <i className="fas fa-terminal"></i>
               <Typography component='span'> Send me a message.</Typography>

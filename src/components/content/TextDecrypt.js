@@ -1,16 +1,23 @@
-// src/components/content/TextDecrypt.js
-import React from "react";
+import { useTheme } from "@material-ui/core/styles";
 import { ReactTyped } from "react-typed";
 
 export const TextDecrypt = ({ text }) => {
-  const strings = Array.isArray(text) ? text : [text];
+  const theme = useTheme(); 
+
   return (
-    <ReactTyped
-      strings={strings}
-      typeSpeed={60}
-      backSpeed={30}
-      loop={false}
-      showCursor={false}
-    />
+    <span style={{ color: theme.palette.text.primary }}>
+      {Array.isArray(text) ? (
+        <ReactTyped
+          strings={text}
+          typeSpeed={80}
+          backSpeed={40}
+          showCursor={false} 
+        />
+      ) : (
+        text
+      )}
+    </span>
   );
 };
+
+export default TextDecrypt;

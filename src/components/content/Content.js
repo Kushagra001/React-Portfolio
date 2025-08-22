@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Container } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { TextDecrypt } from "./TextDecrypt";
 import Resume from "../../settings/resume.json";
 import { FirstName, LastName } from "../../utils/getName";
@@ -26,15 +26,25 @@ const useStyles = makeStyles((theme) => ({
 
 export const Content = () => {
   const classes = useStyles();
+  const theme = useTheme(); // ✅ get current theme
 
   return (
     <Container component="main" className={classes.main} maxWidth="md">
       <div className={classes.heading}>
-        <Typography variant="h5" component="h2">
+        <Typography
+          variant="h5"
+          component="h2"
+          style={{ color: theme.palette.text.primary }} // ✅ text follows theme
+        >
           <TextDecrypt text={`${FirstName} ${LastName}`} />
         </Typography>
 
-        <Typography variant="h1" component="h1" className={classes.jobs}>
+        <Typography
+          variant="h1"
+          component="h1"
+          className={classes.jobs}
+          style={{ color: theme.palette.text.primary }} // ✅ text follows theme
+        >
           <TextDecrypt
             text={[
               Resume.basics.job1,

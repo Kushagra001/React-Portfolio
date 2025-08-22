@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { TextDecrypt } from "../content/TextDecrypt";
+import { Typography } from "@material-ui/core";
 
 import './Works.css';
 
@@ -16,11 +17,46 @@ import JobTracker from '../../assets/recentprojects/jobTrackerAssistant.png';
 
 const useStyles = makeStyles((theme) => ({
   main: {
-    maxWidth: '100vw',
-    marginTop: '3em',
+    maxWidth: "100vw",
+    marginTop: "3em",
     marginBottom: "auto",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: theme.spacing(6),
+  },
+  projectWrapper: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    textAlign: "center",
+    maxWidth: "600px",
+    width: "100%",
+    padding: theme.spacing(2),
+    background: theme.palette.background.paper,   // <-- adapts to theme
+    borderRadius: theme.shape.borderRadius,
+    boxShadow: theme.shadows[3],
+  },
+  imgWrapper: {
+    "& img": {
+      width: "100%",
+      maxWidth: "450px",
+      borderRadius: theme.shape.borderRadius,
+      boxShadow: theme.shadows[4],
+      marginBottom: theme.spacing(2),
+    },
+  },
+  title: {
+    color: theme.palette.text.primary,  // <-- text adapts to theme
+    marginBottom: theme.spacing(1),
+    fontWeight: "bold",
+  },
+  description: {
+    color: theme.palette.text.secondary,  // <-- desc toggles with theme
+    whiteSpace: "pre-line",
   },
 }));
+
 
 export const Works = () => {
   const classes = useStyles();
@@ -85,9 +121,9 @@ export const Works = () => {
               <h3 className="title">
                 <TextDecrypt text={ project.id + '. ' + project.title } />
               </h3>
-              <p className="description">
-                { project.description }
-              </p>
+              <Typography variant="body1" className={classes.description}>
+                {project.description}
+              </Typography>
             </div>
           </div>
         ))}
