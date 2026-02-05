@@ -1,19 +1,6 @@
 import React, { useEffect, useRef, useContext } from "react";
 import classNames from "classnames";
-import {
-    Vector2,
-    sRGBEncoding,
-    WebGLRenderer,
-    PerspectiveCamera,
-    Scene,
-    DirectionalLight,
-    AmbientLight,
-    UniformsUtils,
-    UniformsLib,
-    MeshPhongMaterial,
-    SphereBufferGeometry,
-    Mesh,
-} from "three";
+import * as THREE from "three";
 import { spring, value } from "popmotion";
 import innerHeight from "ios-inner-height";
 import vertShader from "./sphereVertShader";
@@ -49,16 +36,16 @@ const DisplacementSphere = (props) => {
     const isInViewport = useInViewport(canvasRef);
 
     useEffect(() => {
-        mouse.current = new Vector2(0.8, 0.5);
-        renderer.current = new WebGLRenderer({
+        mouse.current = new THREE.Vector2(0.8, 0.5);
+        renderer.current = new THREE.WebGLRenderer({
             canvas: canvasRef.current,
             powerPreference: "high-performance",
         });
         renderer.current.setSize(width.current, height.current);
         renderer.current.setPixelRatio(1);
-        renderer.current.outputEncoding = sRGBEncoding;
+        renderer.current.outputEncoding = THREE.sRGBEncoding;
 
-        camera.current = new PerspectiveCamera(
+        camera.current = new THREE.PerspectiveCamera(
             55,
             width.current / height.current,
             0.1,
@@ -66,13 +53,13 @@ const DisplacementSphere = (props) => {
         );
         camera.current.position.z = 52;
 
-        scene.current = new Scene();
+        scene.current = new THREE.Scene();
 
-        material.current = new MeshPhongMaterial();
+        material.current = new THREE.MeshPhongMaterial();
         material.current.onBeforeCompile = (shader) => {
-            uniforms.current = UniformsUtils.merge([
-                UniformsLib["ambient"],
-                UniformsLib["lights"],
+            uniforms.current = THREE.UniformsUtils.merge([
+                THREE.UniformsLib["ambient"],
+                THREE.UniformsLib["lights"],
                 shader.uniforms,
                 { time: { type: "f", value: 0 } },
             ]);
@@ -83,9 +70,9 @@ const DisplacementSphere = (props) => {
             shader.lights = true;
         };
 
-        geometry.current = new SphereBufferGeometry(32, 128, 128);
+        geometry.current = new THREE.SphereBufferGeometry(32, 128, 128);
 
-        sphere.current = new Mesh(geometry.current, material.current);
+        sphere.current = new THREE.Mesh(geometry.current, material.current);
         sphere.current.position.z = 0;
         sphere.current.modifier = Math.random();
         scene.current.add(sphere.current);
@@ -97,11 +84,11 @@ const DisplacementSphere = (props) => {
     }, []);
 
     useEffect(() => {
-        const dirLight = new DirectionalLight(
+        const dirLight = new THREE.DirectionalLight(
             rgbToThreeColor("250 250 250"),
             0.6
         );
-        const ambientLight = new AmbientLight(
+        const ambientLight = new THREE.AmbientLight(
             rgbToThreeColor("250 250 250"),
             theme === "light" ? 0.8 : 0.1
         );
