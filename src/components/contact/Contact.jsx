@@ -2,9 +2,11 @@
 import React, { useRef } from "react";
 import { Container, Typography, TextField, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { motion } from "framer-motion";
 import { TextDecrypt } from "../content/TextDecrypt";
 import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
+import { fadeInUp, staggerContainer, buttonVariants } from "../../utils/motionVariants";
 
 import "./Contact.css";
 
@@ -95,7 +97,13 @@ export const Contact = () => {
     <section id="contact">
       <Container component="main" className={classes.main} maxWidth="md">
         <div className="contact">
-          <div className="_form_wrapper">
+          <motion.div
+            className="_form_wrapper"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <form ref={form} onSubmit={sendEmail} className={classes.form}>
               <TextField
                 label="Name"
@@ -122,19 +130,31 @@ export const Contact = () => {
                 name="message"
                 className={classes.formfield}
               />
-              <Button
-                type="submit"
-                className={classes.submitBtn}
-                startIcon={<i className="fas fa-terminal"></i>}
+              <motion.div
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
               >
-                Send
-              </Button>
+                <Button
+                  type="submit"
+                  className={classes.submitBtn}
+                  startIcon={<i className="fas fa-terminal"></i>}
+                >
+                  Send
+                </Button>
+              </motion.div>
             </form>
-          </div>
+          </motion.div>
 
-          <h1 className={classes.contactMsg}>
+          <motion.h1
+            className={classes.contactMsg}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <TextDecrypt text={greetings} />
-          </h1>
+          </motion.h1>
         </div>
       </Container>
     </section>

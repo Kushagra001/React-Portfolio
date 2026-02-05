@@ -27,3 +27,10 @@ yarn-error.log*
 .env
 
 package-lock.json
+
+# Agents Architecture
+.tmp/
+execution/__pycache__/
+execution/*.pyc
+credentials.json
+token.json

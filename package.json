@@ -15,24 +15,25 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "classnames": "^2.2.6",
+    "framer-motion": "^6.5.1",
     "ios-inner-height": "^1.1.1",
     "popmotion": "^8.7.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-helmet": "^6.1.0",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^5.0.1",
-    "react-snap": "^1.23.0",
+    "react-scroll": "^1.9.3",
     "react-transition-group": "^4.4.1",
     "react-typed": "^2.0.12",
     "sweetalert2": "^11.4.10",
     "three": "^0.125.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && react-snap",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "reactSnapshot": {
     "exclude": [
@@ -56,8 +57,11 @@
     ]
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
     "ajv": "^6.12.6",
     "ajv-keywords": "^3.5.2",
-    "emailjs": "^4.0.0"
+    "emailjs": "^4.0.0",
+    "vite": "^5.4.21",
+    "vite-plugin-svgr": "^4.5.0"
   }
 }
