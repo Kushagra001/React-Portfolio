@@ -1,7 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "tss-react/mui";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   svgHover: {
     fill: theme.palette.secondary.main,
     '&:hover': {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const ResumeIcon = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <svg 
@@ -34,7 +34,7 @@ export const ResumeIcon = () => {
 };
 
 export const HeartIcon = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <svg

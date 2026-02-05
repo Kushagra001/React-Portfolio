@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Container, Typography } from "@mui/material";
+import { makeStyles } from "tss-react/mui";
 import { motion } from "framer-motion";
 import { TextDecrypt } from "../content/TextDecrypt";
 import { FirstName, LastName } from "../../utils/getName";
@@ -10,7 +10,7 @@ import './About.css';
 
 import profile from '../../assets/profile.png';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   main: {
     maxWidth: '100vw',
     marginTop: '3em',
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export const About = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const greetings = "Hello there!";
   const aboutme = `I'm ${FirstName} ${LastName}, a web developer who loves building interactive and scalable apps.
    I work with React, Node.js, and MongoDB, and enjoy exploring new tools like Socket.io and OpenAI APIs. 

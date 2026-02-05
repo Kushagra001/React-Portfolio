@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useState } from "react";
-import { Container } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Container } from "@mui/material";
+import { makeStyles } from "tss-react/mui";
 
 import './Works.css';
 import { ProjectCard } from "./ProjectCard";
@@ -14,7 +14,7 @@ import Chatbot from '../../assets/recentprojects/chatbot.png';
 import FoodApp from '../../assets/recentprojects/foodApp.png';
 import JobTracker from '../../assets/recentprojects/jobTrackerAssistant.png';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   main: {
     maxWidth: "100vw",
     marginTop: "3em",
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const Works = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const [projects, setProjects] = useState([
     {
       id: 1,

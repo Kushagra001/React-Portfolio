@@ -2,8 +2,8 @@
 import React from 'react';
 import { LogoLink } from '../components/logo/LogoLink';
 import { Content } from '../components/content/Content';
-import { Hidden } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Box } from '@mui/material';
+import { makeStyles } from "tss-react/mui";
 import DisplacementSphere from '../components/background/DisplacementSphere';
 import { ThemeToggle } from '../components/theme/ThemeToggle';
 import { Resume } from '../components/resume/Resume';
@@ -14,7 +14,7 @@ import { Works } from '../components/works/Works';
 import { About } from '../components/about/About';
 import { Contact } from '../components/contact/Contact';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles()(() => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
@@ -23,7 +23,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function Home() {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <>
@@ -32,12 +32,12 @@ export default function Home() {
         <LogoLink />
         <Content />
         <ThemeToggle />
-        <Hidden smDown>
+        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
           <SocialIcons />
-        </Hidden>
-        <Hidden mdUp>
+        </Box>
+        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
           <SpeedDials />
-        </Hidden>
+        </Box>
         <Resume />
       </div>
       <SideNavbar />

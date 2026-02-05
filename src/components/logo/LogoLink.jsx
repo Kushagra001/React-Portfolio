@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, Tooltip, Zoom } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Link, Tooltip, Zoom } from "@mui/material";
+import { makeStyles } from "tss-react/mui";
 import Resume from "../../settings/resume.json";
 import { Logo } from "./Logo";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   svg: {
     position: "fixed",
     width: "50px",
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const LogoLink = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Tooltip

@@ -1,4 +1,4 @@
-import { createTheme, responsiveFontSizes } from '@material-ui/core';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import Settings from '../../settings/settings.json';
 
 export const primary = `${Settings.colors.primary}`;
@@ -9,7 +9,7 @@ export const white = `${Settings.colors.white}`;
 export const LightTheme = responsiveFontSizes(
   createTheme({
     palette: {
-      type: 'light',
+      mode: 'light',
       primary: {
         main: primary,
       },
@@ -19,8 +19,9 @@ export const LightTheme = responsiveFontSizes(
       background: {
         default: white,
       },
-      foreground: {
-        default: black,
+      text: {
+        primary: black,
+        secondary: black,
       },
     },
     typography: {
@@ -39,14 +40,14 @@ export const LightTheme = responsiveFontSizes(
         fontWeight: 500,
         fontFamily: 'Roboto Mono, monospace',
       },
-      body: {
+      body1: {
         fontWeight: 500,
         fontFamily: 'Roboto Mono, monospace',
       },
     },
-    overrides: {
+    components: {
       MuiCssBaseline: {
-        '@global': {
+        styleOverrides: {
           body: {
             color: black,
             backgroundColor: white,
@@ -54,50 +55,58 @@ export const LightTheme = responsiveFontSizes(
         },
       },
       MuiIconButton: {
-        root: {
-          boxShadow:
-            '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)',
-          '&:hover': {
-            backgroundColor: primary,
+        styleOverrides: {
+          root: {
+            boxShadow:
+              '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)',
+            '&:hover': {
+              backgroundColor: primary,
+            },
+            transition: 'all 0.5s ease',
           },
-          transition: 'all 0.5s ease',
         },
       },
       MuiFab: {
-        root: {
-          width: '2.5rem',
-          height: '2.5rem',
-          fontSize: '1.25rem',
-        },
-        primary: {
-          color: black,
-          backgroundColor: 'transparent',
-          '&:hover': {
-            color: black,
-            backgroundColor: primary,
+        styleOverrides: {
+          root: {
+            width: '2.5rem',
+            height: '2.5rem',
+            fontSize: '1.25rem',
           },
-          transition: 'all 0.5s ease !important',
+          primary: {
+            color: black,
+            backgroundColor: 'transparent',
+            '&:hover': {
+              color: black,
+              backgroundColor: primary,
+            },
+            transition: 'all 0.5s ease !important',
+          },
         },
       },
       MuiSpeedDialAction: {
-        fab: {
-          color: white,
-          backgroundColor: 'transparent',
-          '&:hover': {
+        styleOverrides: {
+          fab: {
             color: white,
-            backgroundColor: primary,
+            backgroundColor: 'transparent',
+            '&:hover': {
+              color: white,
+              backgroundColor: primary,
+            },
+            transition: 'all 0.5s ease',
+            margin: '0px',
+            marginBottom: '16px',
           },
-          transition: 'all 0.5s ease',
-          margin: '0px',
-          marginBottom: '16px',
         },
       },
       MuiTooltip: {
-        tooltip: {
-          fontFamily: 'Roboto Mono, monospace',
-          backgroundColor: primary,
-          color: black,
-          fontSize: 12,
+        styleOverrides: {
+          tooltip: {
+            fontFamily: 'Roboto Mono, monospace',
+            backgroundColor: primary,
+            color: black,
+            fontSize: 12,
+          },
         },
       },
     },
@@ -107,7 +116,7 @@ export const LightTheme = responsiveFontSizes(
 export const DarkTheme = responsiveFontSizes(
   createTheme({
     palette: {
-      type: 'dark',
+      mode: 'dark',
       primary: {
         main: primary,
       },
@@ -117,8 +126,9 @@ export const DarkTheme = responsiveFontSizes(
       background: {
         default: black,
       },
-      foreground: {
-        default: white,
+      text: {
+        primary: white,
+        secondary: white,
       },
     },
     typography: {
@@ -137,14 +147,14 @@ export const DarkTheme = responsiveFontSizes(
         fontWeight: 500,
         fontFamily: 'Roboto Mono, monospace',
       },
-      body: {
+      body1: {
         fontWeight: 500,
         fontFamily: 'Roboto Mono, monospace',
       },
     },
-    overrides: {
+    components: {
       MuiCssBaseline: {
-        '@global': {
+        styleOverrides: {
           body: {
             color: white,
             backgroundColor: black,
@@ -152,50 +162,58 @@ export const DarkTheme = responsiveFontSizes(
         },
       },
       MuiIconButton: {
-        root: {
-          boxShadow:
-            '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)',
-          '&:hover': {
-            backgroundColor: primary,
+        styleOverrides: {
+          root: {
+            boxShadow:
+              '0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)',
+            '&:hover': {
+              backgroundColor: primary,
+            },
+            transition: 'all 0.5s ease',
           },
-          transition: 'all 0.5s ease',
         },
       },
       MuiFab: {
-        root: {
-          width: '2.5rem',
-          height: '2.5rem',
-          fontSize: '1.25rem',
-        },
-        primary: {
-          color: white,
-          backgroundColor: 'transparent',
-          '&:hover': {
-            color: white,
-            backgroundColor: primary,
+        styleOverrides: {
+          root: {
+            width: '2.5rem',
+            height: '2.5rem',
+            fontSize: '1.25rem',
           },
-          transition: 'all 0.5s ease !important',
+          primary: {
+            color: white,
+            backgroundColor: 'transparent',
+            '&:hover': {
+              color: white,
+              backgroundColor: primary,
+            },
+            transition: 'all 0.5s ease !important',
+          },
         },
       },
       MuiSpeedDialAction: {
-        fab: {
-          color: white,
-          backgroundColor: 'transparent',
-          '&:hover': {
+        styleOverrides: {
+          fab: {
             color: white,
-            backgroundColor: primary,
+            backgroundColor: 'transparent',
+            '&:hover': {
+              color: white,
+              backgroundColor: primary,
+            },
+            transition: 'all 0.5s ease',
+            margin: '0px',
+            marginBottom: '16px',
           },
-          transition: 'all 0.5s ease',
-          margin: '0px',
-          marginBottom: '16px',
         },
       },
       MuiTooltip: {
-        tooltip: {
-          fontFamily: 'Roboto Mono, monospace',
-          backgroundColor: primary,
-          color: white,
-          fontSize: 12,
+        styleOverrides: {
+          tooltip: {
+            fontFamily: 'Roboto Mono, monospace',
+            backgroundColor: primary,
+            color: white,
+            fontSize: 12,
+          },
         },
       },
     },

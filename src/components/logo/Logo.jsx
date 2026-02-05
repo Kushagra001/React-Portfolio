@@ -1,7 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "tss-react/mui";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   logoImg: {
     height: 60, // adjust as needed
     width: 60,  // adjust as needed
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const Logo = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   return (
     <img

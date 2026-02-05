@@ -1,11 +1,11 @@
 import React from "react";
-import { Tooltip, IconButton } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Tooltip, IconButton } from "@mui/material";
+import { makeStyles } from "tss-react/mui";
 import { motion } from "framer-motion";
 import Resume from "../../settings/resume.json";
 import { staggerContainer, buttonVariants } from "../../utils/motionVariants";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   socialIcons: {
     position: "fixed",
     top: theme.spacing(6),
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const SocialIcons = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const socialItems = Resume.basics.profiles;
 

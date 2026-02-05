@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "./ThemeProvider";
-import { Tooltip, IconButton, Zoom } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import { Brightness4, Brightness7 } from "@material-ui/icons";
+import { Tooltip, IconButton, Zoom } from "@mui/material";
+import { makeStyles } from "tss-react/mui";
+import { Brightness4, Brightness7 } from "@mui/icons-material";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   iconButton: {
     position: "fixed",
     bottom: theme.spacing(6),
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const ThemeToggle = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
-    const classes = useStyles();
+    const { classes } = useStyles();
 
     return (
       <Tooltip

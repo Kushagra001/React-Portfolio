@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
+import { makeStyles } from "tss-react/mui";
+import { Typography } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { TextDecrypt } from "../content/TextDecrypt";
 import { cardVariants, overlayVariants, buttonVariants } from "../../utils/motionVariants";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
     projectContainer: {
         width: "70%",
         margin: "4rem auto",
@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const ProjectCard = ({ project, index }) => {
-    const classes = useStyles();
+    const { classes } = useStyles();
     const isEven = index % 2 === 0;
 
     // Mobile check using simplified logic (since we can't easily use hooks.useMediaQuery here without importing theme provider context directly or passing theme)

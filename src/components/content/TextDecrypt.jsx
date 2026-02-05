@@ -1,4 +1,4 @@
-import { useTheme } from "@material-ui/core/styles";
+import { useTheme } from "@mui/material/styles";
 import { ReactTyped } from "react-typed";
 
 export const TextDecrypt = ({ text }) => {

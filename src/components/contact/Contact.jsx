@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useRef } from "react";
-import { Container, Typography, TextField, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Container, Typography, TextField, Button } from "@mui/material";
+import { makeStyles } from "tss-react/mui";
 import { motion } from "framer-motion";
 import { TextDecrypt } from "../content/TextDecrypt";
 import Swal from "sweetalert2";
@@ -11,7 +11,7 @@ import { fadeInUp, staggerContainer, buttonVariants } from "../../utils/motionVa
 import "./Contact.css";
 
 // inside useStyles
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   main: {
     maxWidth: "100vw",
     marginTop: "3em",
@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export const Contact = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const greetings = "Get in touch!";
   const form = useRef();
 

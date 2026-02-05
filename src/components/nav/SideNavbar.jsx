@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Typography } from "@mui/material";
+import { makeStyles } from "tss-react/mui";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { slideInLeft, buttonVariants } from "../../utils/motionVariants";
@@ -9,14 +9,14 @@ import { ThemeToggle } from "../theme/ThemeToggle";
 
 import "./SideNavbar.css";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles()((theme) => ({
   root: {
     backgroundColor: theme.palette.background.default,
   },
 }));
 
 export const SideNavbar = () => {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const links = [
     { name: 'About', to: 'about' },
     { name: 'Projects', to: 'works' },
