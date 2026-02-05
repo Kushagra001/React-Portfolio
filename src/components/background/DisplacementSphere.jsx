@@ -2,10 +2,9 @@ import React, { useEffect, useRef, useContext } from "react";
 import classNames from "classnames";
 import * as THREE from "three";
 import { spring, value } from "popmotion";
-import innerHeight from "ios-inner-height";
+import Transition from "react-transition-group/Transition";
 import vertShader from "./sphereVertShader";
 import fragShader from "./sphereFragShader";
-import { Transition } from "react-transition-group";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import { useInViewport } from "../../hooks/useInViewport";
 import { reflow } from "../../utils/transition";
@@ -108,7 +107,7 @@ const DisplacementSphere = (props) => {
 
     useEffect(() => {
         const handleResize = () => {
-            const canvasHeight = innerHeight();
+            const canvasHeight = window.innerHeight;
             const windowWidth = window.innerWidth;
             const fullHeight = canvasHeight + canvasHeight * 0.3;
             canvasRef.current.style.height = fullHeight;
