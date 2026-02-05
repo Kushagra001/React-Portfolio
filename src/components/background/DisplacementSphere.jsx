@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext } from "react";
 import classNames from "classnames";
 import * as THREE from "three";
 import { spring, value } from "popmotion";
-import Transition from "react-transition-group/Transition";
+import { Transition } from "react-transition-group";
 import vertShader from "./sphereVertShader";
 import fragShader from "./sphereFragShader";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
