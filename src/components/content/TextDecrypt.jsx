@@ -6,16 +6,8 @@ export const TextDecrypt = ({ text }) => {
 
   return (
     <span style={{ color: theme.palette.text.primary }}>
-      {Array.isArray(text) ? (
-        <ReactTyped
-          strings={text}
-          typeSpeed={80}
-          backSpeed={40}
-          showCursor={false}
-        />
-      ) : (
-        text
-      )}
+      {/* Bypass ReactTyped for debugging */}
+      {Array.isArray(text) ? text.join(' ') : text}
     </span>
   );
 };
