@@ -13,12 +13,18 @@ const useStyles = makeStyles()((theme) => ({
     maxWidth: "100vw",
     marginTop: "auto",
     marginBottom: "auto",
+    paddingLeft: theme.spacing(10), // Reduced from spacing(50)
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    [theme.breakpoints.down("md")]: {
+      paddingLeft: theme.spacing(4),
+      alignItems: "center", // Center on mobile
+      textAlign: "center",
+    },
   },
   heading: {
-    marginLeft: theme.spacing(50),
-    "@media (max-width: 768px)": {
-      marginLeft: theme.spacing(10),
-    },
+    // marginLeft removed to rely on container padding
   },
   jobs: {
     "@media (max-width: 768px)": {

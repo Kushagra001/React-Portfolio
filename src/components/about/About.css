@@ -1,59 +1,84 @@
 .about {
-  width: 80%;
-  margin-left: 7rem;
-  margin-right: 7rem;
+  width: 90%;
+  max-width: 1000px;
+  /* Constrain max width for readability */
+  margin: 0 auto;
+  /* Center the container */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  /* Stack vertically */
   align-items: center;
+  /* Center items horizontally */
+  justify-content: center;
+  text-align: center;
+  /* Center text content */
+  padding: 2rem 0;
 }
+
 .heading {
-  width: 30%;
+  width: 100%;
   font-size: 1.15rem;
+  margin-bottom: 1rem;
 }
+
 ._img {
-  margin: 10em;
-  width: 35em;
-  height: 20em;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.51);
+  width: 18em;
+  height: 18em;
+  margin-bottom: 2rem;
+  /* Space between image and text */
+  border-radius: 50%;
+  /* Circular profile image */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
+
+._img:hover {
+  transform: scale(1.02);
+}
+
 ._content_wrapper {
-  width: 40%;
+  width: 100%;
+  max-width: 700px;
+  /* Limit text width for optimal reading line length */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
+
 .contact-btn {
-  margin-right: 20px;
+  margin-top: 1rem;
   text-decoration: none;
-  color: #464646;
+  color: inherit;
+  /* Inherit theme text color */
+  opacity: 0.8;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  background: rgba(128, 128, 128, 0.1);
+  /* Subtle default background */
 }
+
 .contact-btn:hover {
-  margin-right: 20px;
   text-decoration: none;
-  background-color: #ec704c;
+  color: #ec704c;
+  background: rgba(128, 128, 128, 0.2);
+  transform: translateY(-2px);
 }
-@media (max-width: 1024px) {
-  .about {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-  ._img {
-    margin: 2em;
-  }
-  ._content_wrapper {
-    width: 40%;
-  }
-}
+
 @media (max-width: 768px) {
-  .about {
-    margin-left: 4em;
-    margin-right: 4em;
-    flex-direction: column;
-  }
   ._img {
-    width: 15em;
-    height: 12em;
+    width: 14em;
+    height: 14em;
   }
-  ._content_wrapper {
-    width: 15em;
+
+  .about {
+    width: 95%;
   }
 }

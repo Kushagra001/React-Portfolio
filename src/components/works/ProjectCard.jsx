@@ -8,14 +8,17 @@ import { cardVariants, overlayVariants, buttonVariants } from "../../utils/motio
 
 const useStyles = makeStyles()((theme) => ({
     projectContainer: {
-        width: "70%",
-        margin: "4rem auto",
-        display: "flex",
+        width: "100%",
+        maxWidth: "1300px",
+        margin: "3rem auto",
+        display: "flex", // Flexbox for layout
         flexDirection: "row",
-        alignItems: "center",
-        gap: "10rem",
+        alignItems: "stretch", // Force equal height for children
+        justifyContent: "center",
+        gap: "1.5rem",
         [theme.breakpoints.down("md")]: {
             flexDirection: "column",
+            alignItems: "center",
             gap: "2rem",
             width: "90%",
         },
@@ -24,37 +27,41 @@ const useStyles = makeStyles()((theme) => ({
         flexDirection: "row-reverse",
     },
     imgWrapper: {
-        width: "600px",
-        height: "300px",
+        flex: "1 1 50%", // Equal width (50%)
+        width: "100%",
+        height: "100%", // Fill the stretched height
         overflow: "hidden",
-        borderRadius: "6px",
+        borderRadius: "16px",
         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
-        background: theme.palette.type === 'dark' ? "#111" : "#f0f0f0",
+        background: theme.palette.mode === 'dark' ? "#1a1a1a" : "#f0f0f0",
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
         "& img": {
             width: "100%",
             height: "100%",
-            objectFit: "cover",
+            objectFit: "cover", // Cover the area
+            objectPosition: "center",
+            display: "block",
         },
         [theme.breakpoints.down("md")]: {
             width: "100%",
-            height: "250px",
+            height: "auto",
+            minHeight: "250px", // Fallback for mobile
         },
     },
     contentWrapper: {
-        width: "40%",
-        padding: "1.5rem",
-        display: "flex",
+        flex: "1 1 50%", // Equal width (50%)
+        width: "100%",
+        padding: "2rem", // Reverted to larger padding for balance
+        display: "flex", // ...
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "flex-start",
         borderRadius: "16px",
         boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-        border: theme.palette.type === 'dark' ? "1px solid rgba(255, 255, 255, 0.51)" : "1px solid rgba(0, 0, 0, 0.1)",
-        background: theme.palette.type === 'dark' ? "rgba(0, 0, 0, 0.5)" : "rgba(255, 255, 255, 0.8)",
-        backdropFilter: "blur(5px)", // Improved glassmorphism
+        border: theme.palette.mode === 'dark' ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid rgba(0, 0, 0, 0.1)",
+        // Explicit black background for dark mode requested by user
+        background: theme.palette.mode === 'dark' ? "#000000" : "rgba(255, 255, 255, 0.9)",
+        backdropFilter: "blur(5px)",
         position: "relative",
         overflow: "hidden",
         [theme.breakpoints.down("md")]: {
@@ -72,20 +79,20 @@ const useStyles = makeStyles()((theme) => ({
         lineHeight: 1.6,
         color: theme.palette.text.secondary,
         whiteSpace: "pre-line",
-        marginBottom: "2rem", // Extra space for action bar
+        marginBottom: "2rem",
     },
     actionBar: {
         position: "absolute",
         bottom: 0,
         left: 0,
         width: "100%",
-        background: theme.palette.type === 'dark' ? "rgba(0, 0, 0, 0.8)" : "rgba(255, 255, 255, 0.9)",
+        background: theme.palette.mode === 'dark' ? "rgba(0, 0, 0, 0.9)" : "rgba(255, 255, 255, 0.95)",
         backdropFilter: "blur(5px)",
         padding: "0.8rem 1.5rem",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        borderTop: theme.palette.type === 'dark' ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid rgba(0, 0, 0, 0.1)",
+        borderTop: theme.palette.mode === 'dark' ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid rgba(0, 0, 0, 0.1)",
         zIndex: 10,
     },
     actionButton: {
@@ -107,8 +114,8 @@ const useStyles = makeStyles()((theme) => ({
     },
     githubBtn: {
         background: "transparent",
-        color: theme.palette.type === 'dark' ? "#e0e0e0" : "#333",
-        border: theme.palette.type === 'dark' ? "1px solid rgba(255, 255, 255, 0.3)" : "1px solid rgba(0, 0, 0, 0.3)",
+        color: theme.palette.mode === 'dark' ? "#e0e0e0" : "#333",
+        border: theme.palette.mode === 'dark' ? "1px solid rgba(255, 255, 255, 0.3)" : "1px solid rgba(0, 0, 0, 0.3)",
     },
 }));
 

@@ -6,8 +6,8 @@ export const TextDecrypt = ({ text }) => {
 
   return (
     <span style={{ color: theme.palette.text.primary }}>
-      {/* Bypass ReactTyped for debugging */}
-      {Array.isArray(text) ? text.join(' ') : text}
+      {/* Show only the last item if it's an array (fallback for react-typed removal) */}
+      {Array.isArray(text) ? text[text.length - 1] : text}
     </span>
   );
 };

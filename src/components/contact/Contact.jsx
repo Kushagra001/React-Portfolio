@@ -47,14 +47,6 @@ const useStyles = makeStyles()((theme) => ({
       backgroundColor: theme.palette.primary.dark,
     },
   },
-  contactMsg: {
-    marginTop: theme.spacing(4),
-    marginLeft: theme.spacing(6), // 👈 moves text left
-    textAlign: "left",
-    fontSize: "2.5rem",           // 👈 bigger text
-    fontWeight: "bold",
-    color: theme.palette.text.primary,
-  },
 }));
 
 
@@ -97,64 +89,67 @@ export const Contact = () => {
     <section id="contact">
       <Container component="main" className={classes.main} maxWidth="md">
         <div className="contact">
-          <motion.div
-            className="_form_wrapper"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <form ref={form} onSubmit={sendEmail} className={classes.form}>
-              <TextField
-                label="Name"
-                type="text"
-                size="small"
-                variant="filled"
-                name="name"
-                className={classes.formfield}
-              />
-              <TextField
-                label="Email"
-                type="email"
-                size="small"
-                variant="filled"
-                name="email"
-                className={classes.formfield}
-              />
-              <TextField
-                label="Message"
-                multiline
-                minRows={5}
-                size="small"
-                variant="filled"
-                name="message"
-                className={classes.formfield}
-              />
-              <motion.div
-                variants={buttonVariants}
-                whileHover="hover"
-                whileTap="tap"
-              >
-                <Button
-                  type="submit"
-                  className={classes.submitBtn}
-                  startIcon={<i className="fas fa-terminal"></i>}
-                >
-                  Send
-                </Button>
-              </motion.div>
-            </form>
-          </motion.div>
+          <div className="contact_wrapper">
+            <motion.h1
+              className="contact_msg"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <TextDecrypt text={greetings} />
+            </motion.h1>
 
-          <motion.h1
-            className={classes.contactMsg}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <TextDecrypt text={greetings} />
-          </motion.h1>
+            <motion.div
+              className="form_wrapper"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <form ref={form} onSubmit={sendEmail} className={classes.form}>
+                <TextField
+                  label="Name"
+                  type="text"
+                  size="small"
+                  variant="filled"
+                  name="name"
+                  className={classes.formfield}
+                />
+                <TextField
+                  label="Email"
+                  type="email"
+                  size="small"
+                  variant="filled"
+                  name="email"
+                  className={classes.formfield}
+                />
+                <TextField
+                  label="Message"
+                  multiline
+                  minRows={5}
+                  size="small"
+                  variant="filled"
+                  name="message"
+                  className={classes.formfield}
+                />
+                <motion.div
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                  style={{ width: "100%", display: "flex", justifyContent: "center" }}
+                >
+                  <Button
+                    type="submit"
+                    className={classes.submitBtn}
+                    startIcon={<i className="fas fa-terminal"></i>}
+                  >
+                    Send
+                  </Button>
+                </motion.div>
+              </form>
+            </motion.div>
+          </div>
         </div>
       </Container>
     </section>
