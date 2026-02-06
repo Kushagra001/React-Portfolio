@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <div className={classes.root} id="home">
-        <DisplacementSphere />
+        {/* <DisplacementSphere /> */}
         <LogoLink />
         <Content />
         <ThemeToggle />
