@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import { useState } from "react";
 import { Container } from "@mui/material";
@@ -13,6 +12,7 @@ import Linkify from '../../assets/recentprojects/linkify.png';
 import Chatbot from '../../assets/recentprojects/chatbot.png';
 import FoodApp from '../../assets/recentprojects/foodApp.png';
 import JobTracker from '../../assets/recentprojects/jobTrackerAssistant.png';
+import StartupPerks from '../../assets/recentprojects/startupPerks.png';
 
 const useStyles = makeStyles()((theme) => ({
   main: {
@@ -31,6 +31,18 @@ export const Works = () => {
   const [projects, setProjects] = useState([
     {
       id: 1,
+      title: 'Startup Perks',
+      description: `A premium SaaS platform connecting startups with exclusive deals.
+      Built with a modern dark-mode aesthetic and secure authentication.
+      Features a scalable architecture with Next.js and MongoDB.`,
+      alter: 'Startup Perks',
+      image: `${StartupPerks}`,
+      tech: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+      githubUrl: 'https://github.com/Kushagra001/StartupPerks',
+      liveUrl: 'https://startup-perks-eta.vercel.app/'
+    },
+    {
+      id: 2,
       title: 'React Portfolio',
       description: `Developed a ReactJS portfolio with interactive design.
       Integrated Three.js to create smooth 3D background effects.
@@ -42,7 +54,7 @@ export const Works = () => {
       liveUrl: 'https://kushagra.vercel.app/'
     },
     {
-      id: 2,
+      id: 3,
       title: 'Linkify Project',
       description: `Built a real-time chat app using the MERN stack.
       Integrated Socket.io for seamless, low-latency messaging.
@@ -51,10 +63,10 @@ export const Works = () => {
       image: `${Linkify}`,
       tech: ['MERN Stack', 'Socket.io', 'JWT'],
       githubUrl: 'https://github.com/Kushagra001/Linkify',
-      liveUrl: ''
+      liveUrl: 'https://linkify-k8j8.onrender.com/'
     },
     {
-      id: 3,
+      id: 4,
       title: 'Chatbot Project',
       description: `Developed an intelligent chatbot using MERN stack.
       Integrated OpenAI API to handle queries and coding questions.
@@ -66,7 +78,7 @@ export const Works = () => {
       liveUrl: ''
     },
     {
-      id: 4,
+      id: 5,
       title: 'Food App Project',
       description: `Developed a food ordering UI using ReactJS.
       Designed category filters, top picks, and cart/profile pages.
@@ -78,7 +90,7 @@ export const Works = () => {
       liveUrl: 'https://food-app-kushagra001.vercel.app/'
     },
     {
-      id: 5,
+      id: 6,
       title: 'Job Tracker Assistant',
       description: `Developed a app to organize and track job applications.
       Includes an interactive dashboard for monitoring progress and success rates.
